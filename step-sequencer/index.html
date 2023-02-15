@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Tone Sequencer</title>
+  </head>
+  <body>
+    <h1>
+      <span class="primary-heading">Tone Sequencer</span><br /><span
+        class="sub-heading"
+        >by Straktor Media & Pankcid-Electronics</span
+      >
+    </h1>
+    <main class="step-sequencer--container">
+      <!-- <div class="notes--label">
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+      </div> -->
+
+      <div class="step-sequencer grid-col-span-2">
+        <div class="note--C3">
+          <input type="checkbox" class="1" id="C1" checked />
+          <input type="checkbox" class="2" id="C2" />
+          <input type="checkbox" class="3" id="C3" />
+          <input type="checkbox" class="4" id="C4" />
+          <input type="checkbox" class="5" id="C5" />
+          <input type="checkbox" class="6" id="C6" />
+          <input type="checkbox" class="7" id="C7" />
+          <input type="checkbox" class="8" id="C8" />
+        </div>
+        <div class="note--D3">
+          <input type="checkbox" class="1" id="D1" />
+          <input type="checkbox" class="2" id="D2" />
+          <input type="checkbox" class="3" id="D3" />
+          <input type="checkbox" class="4" id="D4" checked />
+          <input type="checkbox" class="5" id="D5" />
+          <input type="checkbox" class="6" id="D6" />
+          <input type="checkbox" class="7" id="D7" />
+          <input type="checkbox" class="8" id="D8" />
+        </div>
+        <div class="note--E3">
+          <input type="checkbox" class="1" id="E1" />
+          <input type="checkbox" class="2" id="E2" />
+          <input type="checkbox" class="3" id="E3" />
+          <input type="checkbox" class="4" id="E4" />
+          <input type="checkbox" class="5" id="E5" />
+          <input type="checkbox" class="6" id="E6" checked />
+          <input type="checkbox" class="7" id="E7" />
+          <input type="checkbox" class="8" id="E8" />
+        </div>
+        <div class="note--F3">
+          <input type="checkbox" class="1" id="F1" />
+          <input type="checkbox" class="2" id="F2" />
+          <input type="checkbox" class="3" id="F3" />
+          <input type="checkbox" class="4" id="F4" />
+          <input type="checkbox" class="5" id="F5" />
+          <input type="checkbox" class="6" id="F6" />
+          <input type="checkbox" class="7" id="F7" />
+          <input type="checkbox" class="8" id="F8" />
+        </div>
+        <div class="note--G3">
+          <input type="checkbox" class="1" id="G1" />
+          <input type="checkbox" class="2" id="G2" checked />
+          <input type="checkbox" class="3" id="G3" />
+          <input type="checkbox" class="4" id="G4" />
+          <input type="checkbox" class="5" id="G5" />
+          <input type="checkbox" class="6" id="G6" />
+          <input type="checkbox" class="7" id="G7" />
+          <input type="checkbox" class="8" id="G8" />
+        </div>
+        <div class="note--A3">
+          <input type="checkbox" class="1" id="A1" />
+          <input type="checkbox" class="2" id="A2" />
+          <input type="checkbox" class="3" id="A3" />
+          <input type="checkbox" class="4" id="A4" />
+          <input type="checkbox" class="5" id="A5" />
+          <input type="checkbox" class="6" id="A6" />
+          <input type="checkbox" class="7" id="A7" />
+          <input type="checkbox" class="8" id="A8" checked />
+        </div>
+        <div class="note--B3">
+          <input type="checkbox" class="1" id="B1" />
+          <input type="checkbox" class="2" id="B2" />
+          <input type="checkbox" class="3" id="B3" />
+          <input type="checkbox" class="4" id="B4" />
+          <input type="checkbox" class="5" id="B5" />
+          <input type="checkbox" class="6" id="B6" />
+          <input type="checkbox" class="7" id="B7" />
+          <input type="checkbox" class="8" id="B8" />
+        </div>
+      </div>
+      <!-- <div class="steps--label">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+      </div> -->
+      <div class="ui--note-scale">
+        <form class="ui--note-form">
+          <label for="notes" class="label">Choose root:</label>
+          <select class="ui--note" name="notes" id="notes">
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="B">B</option>
+          </select>
+          <br /><br />
+          <!-- <input type="submit" value="Go" /> -->
+        </form>
+        <form class="ui--scale-form">
+          <label for="scale" class="label">Choose scale:</label>
+          <select class="ui--scale" name="scale" id="scale">
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+          <br /><br />
+          <!-- <input type="submit" value="Go" /> -->
+        </form>
+      </div>
+      <div class="transport full-width">
+        <div class="transport-buttons">
+          <button class="btn play">PLAY</button>
+          <button class="btn pause">PAUSE</button>
+        </div>
+
+        <form class="bpm--form">
+          <label for="bpm" class="label bpm-label">BPM</label>
+          <input type="number" class="bpm--input" value="140" />
+          <!-- <input type="submit" value="Go" class="bpm--btn" /> -->
+        </form>
+      </div>
+    </main>
+    <div id="overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.38/Tone.min.js"></script>
+
+    <script type="module" src="src/script.js"></script>
+  </body>
+</html>
