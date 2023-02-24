@@ -5,16 +5,16 @@ body {
 }
 
 .screenOrient {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: white;
   position: absolute;
+  inset: 0;
   z-index: 99;
   width: 100%;
   height: 100%;
-  inset: 0;
 }
 
 .screenOrient__btn {
@@ -159,6 +159,7 @@ input[type="checkbox"]:checked {
 
 /* MEDIA QUERIES */
 
+/* LANSCAPE MODE */
 @media all and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
   .primary-heading__title {
     display: default;
@@ -211,5 +212,44 @@ input[type="checkbox"]:checked {
   .bpm--input,
   .bpm-label {
     font-size: 1.2rem;
+  }
+}
+@media all and (max-width: 600px) and (max-height: 900px) and (orientation: portrait) {
+  .step-sequencer--container {
+    gap: 3em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  input[type="checkbox"] {
+    width: 2.2rem;
+    height: 2.4rem;
+  }
+  .ui--note,
+  .ui--scale {
+    font-size: 1.2rem;
+    min-width: 9rem;
+  }
+  .ui--note-scale label {
+    min-width: 12rem;
+  }
+
+  .btn {
+    margin-left: 0.5rem;
+    min-width: 8rem;
+  }
+  .btn,
+  .bpm--input,
+  .bpm-label {
+    font-size: 1.2rem;
+  }
+  .transport {
+    padding: 1rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-self: normal;
+    justify-content: space-between;
+    align-items: baseline;
   }
 }
