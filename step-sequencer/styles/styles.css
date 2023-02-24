@@ -215,6 +215,13 @@ input[type="checkbox"]:checked {
   }
 }
 @media all and (max-width: 600px) and (max-height: 900px) and (orientation: portrait) {
+  .primary-heading__title {
+    display: default;
+  }
+  .primary-heading__sub-heading {
+    display: none;
+  }
+
   .step-sequencer--container {
     gap: 3em;
     grid-template-columns: 1fr;
