@@ -161,9 +161,6 @@ input[type="checkbox"]:checked {
 
 /* LANSCAPE MODE */
 @media all and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
-  .primary-heading__title {
-    display: default;
-  }
   .primary-heading__sub-heading {
     display: none;
   }
@@ -216,7 +213,7 @@ input[type="checkbox"]:checked {
 }
 @media all and (max-width: 600px) and (max-height: 900px) and (orientation: portrait) {
   .primary-heading__title {
-    display: default;
+    display: none;
   }
   .primary-heading__sub-heading {
     display: none;
