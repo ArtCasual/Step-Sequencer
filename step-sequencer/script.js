@@ -1,3 +1,7 @@
+// SET ORIENTATION WHEN MOBILE
+if (/Mobi/.test(navigator.userAgent)) {
+  screen.orientation.lock("landscape");
+}
 // Selectors
 const rowsC = document.querySelector(".note--C3");
 const rowC = Array.from(rowsC.children);
@@ -65,6 +69,7 @@ function stateCheckBoxes(columns, step) {
   });
 }
 
+// Make it a for loop
 stateCheckBoxes(step1, 1);
 stateCheckBoxes(step2, 2);
 stateCheckBoxes(step3, 3);
