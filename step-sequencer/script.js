@@ -1,7 +1,12 @@
 // SET ORIENTATION WHEN MOBILE
-if (/Mobi/.test(navigator.userAgent)) {
+const modal = document.querySelector(".screenOrient");
+const screenBtn = document.querySelector(".screenOrient__btn");
+screenBtn.addEventListener("click", function () {
+  document.documentElement.requestFullscreen();
   screen.orientation.lock("landscape");
-}
+  modal.style.display = "none";
+});
+
 // Selectors
 const rowsC = document.querySelector(".note--C3");
 const rowC = Array.from(rowsC.children);
@@ -142,7 +147,6 @@ const convertNotesToFreq = function (note, octave = 4) {
 
   keyNumber = notes.indexOf(note);
   // note.slice(0,-1) for removing octave number
-  console.log(keyNumber);
 
   if (keyNumber < 3) {
     keyNumber = keyNumber + 12 + (octave - 1) * 12 + 1;
