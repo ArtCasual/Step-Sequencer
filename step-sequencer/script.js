@@ -39,18 +39,18 @@ const rowsAndColumns = [
   ...rowB,
 ];
 
-// Repeat your self... Columns or Steps
+// Columns or Steps
 
-const step1 = rowsAndColumns.filter((step) => step.id.endsWith(1));
-const step2 = rowsAndColumns.filter((step) => step.id.endsWith(2));
-const step3 = rowsAndColumns.filter((step) => step.id.endsWith(3));
-const step4 = rowsAndColumns.filter((step) => step.id.endsWith(4));
-const step5 = rowsAndColumns.filter((step) => step.id.endsWith(5));
-const step6 = rowsAndColumns.filter((step) => step.id.endsWith(6));
-const step7 = rowsAndColumns.filter((step) => step.id.endsWith(7));
-const step8 = rowsAndColumns.filter((step) => step.id.endsWith(8));
+function getSteps(rowsAndColumns) {
+  const steps = [];
+  for (let i = 1; i <= 8; i++) {
+    const step = rowsAndColumns.filter((column) => column.id.endsWith(i));
+    steps.push(step);
+  }
+  return steps;
+}
 
-const allSteps = [step1, step2, step3, step4, step5, step6, step7, step8];
+const allSteps = getSteps(rowsAndColumns);
 
 let checkBoxes = Array.from(
   document.querySelectorAll("input[type=checkbox]:checked")
@@ -74,15 +74,9 @@ function stateCheckBoxes(columns, step) {
   });
 }
 
-// Make it a for loop
-stateCheckBoxes(step1, 1);
-stateCheckBoxes(step2, 2);
-stateCheckBoxes(step3, 3);
-stateCheckBoxes(step4, 4);
-stateCheckBoxes(step5, 5);
-stateCheckBoxes(step6, 6);
-stateCheckBoxes(step7, 7);
-stateCheckBoxes(step8, 8);
+allSteps.forEach((step, i) => {
+  stateCheckBoxes(step, i + 1);
+});
 
 // Buttons
 const playBtn = document.querySelector(".play");
@@ -209,28 +203,13 @@ function repeat(time, scaleArr) {
   let steps = index % 8;
   index++;
 
-  let inputC = rowC[steps];
-  if (inputC.checked) synth.triggerAttackRelease(scaleArr[0], "8n", time);
-
-  let inputD = rowD[steps];
-  if (inputD.checked) synth.triggerAttackRelease(scaleArr[1], "8n", time);
-
-  let inputE = rowE[steps];
-  if (inputE.checked) synth.triggerAttackRelease(scaleArr[2], "8n", time);
-
-  let inputF = rowF[steps];
-  if (inputF.checked) synth.triggerAttackRelease(scaleArr[3], "8n", time);
-
-  let inputG = rowG[steps];
-  if (inputG.checked) synth.triggerAttackRelease(scaleArr[4], "8n", time);
-
-  let inputA = rowA[steps];
-  if (inputA.checked) synth.triggerAttackRelease(scaleArr[5], "8n", time);
-
-  let inputB = rowB[steps];
-  if (inputB.checked) synth.triggerAttackRelease(scaleArr[6], "8n", time);
+  const inputs = [rowC, rowD, rowE, rowF, rowG, rowA, rowB].map(
+    (row) => row[steps]
+  );
+  inputs.forEach((input, index) => {
+    if (input.checked) synth.triggerAttackRelease(scaleArr[index], "8n", time);
+  });
 }
-////////////////////////////////
 
 // Classes
 
